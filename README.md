@@ -1,5 +1,4 @@
 # 🏦 AI Finance Controller
-> **Razorpay Buildathon — Track 04: "Run the books and the cash position"**
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)
 ![FastAPI](https://img.shields.io/badge/FastAPI-Backend-green?logo=fastapi)
@@ -240,5 +239,3 @@ ai-finance-controller/
 ```
 
 ---
-
-> **Buildathon Prototype Notice:** This implementation satisfies Razorpay Buildathon Track 04 requirements. It demonstrates a controlled reconciliation and treasury simulation workflow and is not a substitute for formal financial statement audits.
