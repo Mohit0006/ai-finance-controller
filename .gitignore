@@ -1,0 +1,15 @@
+venv/
+.venv/
+.env
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.streamlit/
+*.egg-info/
+dist/
+build/
+.coverage
+htmlcov/
+*.mp4
+reconcile.db
