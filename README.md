@@ -203,23 +203,40 @@ Open **[http://localhost:8501](http://localhost:8501)** in your browser.
 
 ```
 ai-finance-controller/
-├── app.py                  # Streamlit UI (4-tab Finance Controller Cockpit)
-├── main.py                 # FastAPI backend (REST API)
-├── matching_engine.py      # Core bipartite reconciliation graph
-├── scoring.py              # Multi-signal composite scorer
-├── settlement_agent.py     # Gemini Q&A agent with structured fallback
-├── cash_position.py        # Book vs. Bank balance engine
-├── forecaster.py           # 7-day liquidity forecaster
-├── tax_matcher.py          # GST + TDS statutory auditor
-├── embeddings.py           # pgvector embedding pipeline
-├── data_processing.py      # Polars CSV ingestion & validation
-├── database.py             # PostgreSQL async connection pool
-├── schemas.py              # Pydantic data models
-├── synthetic_data.py       # Synthetic dataset generator (with anomalies)
-├── migrations/             # SQL schema migrations
-├── tests/                  # 23-test pytest suite
-├── docker-compose.yml      # PostgreSQL + pgvector container
-└── requirements.txt        # Python dependencies
+├── app.py                      # Streamlit UI (4-tab Finance Controller Cockpit)
+├── main.py                     # FastAPI backend (REST API endpoints)
+├── matching_engine.py          # Core bipartite reconciliation graph
+├── scoring.py                  # Multi-signal composite scorer
+├── settlement_agent.py         # Gemini Q&A agent with structured fallback
+├── cash_position.py            # Book vs. Bank balance engine
+├── forecaster.py               # 7-day liquidity forecaster
+├── tax_matcher.py              # GST + TDS statutory auditor
+├── embeddings.py               # pgvector embedding pipeline
+├── data_processing.py          # Polars CSV ingestion & validation
+├── database.py                 # PostgreSQL async connection pool
+├── schemas.py                  # Pydantic data models & enums
+├── config.py                   # App settings & environment config
+├── metrics.py                  # Precision, recall & throughput calculator
+├── synthetic_data.py           # Synthetic dataset generator (with anomalies)
+├── migrations/
+│   └── 001_init.sql            # PostgreSQL schema & pgvector setup
+├── tests/
+│   ├── __init__.py
+│   ├── test_api.py             # FastAPI endpoint integration tests
+│   ├── test_cash_position.py   # Cash position & bridge calculation tests
+│   ├── test_data_processing.py # CSV ingestion & validation tests
+│   ├── test_forecaster.py      # 7-day liquidity forecast tests
+│   ├── test_matching_engine.py # Bipartite matching & exception tests
+│   ├── test_scoring.py         # Multi-signal scorer unit tests
+│   ├── test_settlement_agent.py# Q&A agent & fallback tests
+│   └── test_tax_matcher.py     # GST / TDS statutory audit tests
+├── bank.csv                    # Sample bank settlement data
+├── ledger.csv                  # Sample internal ledger data
+├── ground_truth.csv            # Ground truth for precision/recall evaluation
+├── docker-compose.yml          # PostgreSQL + pgvector container
+├── requirements.txt            # Python dependencies
+├── pyrightconfig.json          # Pyright type-checker config
+└── .env.example                # Environment variable template
 ```
 
 ---
